@@ -10,18 +10,29 @@ Each set up comprises the following components:
 General optomechanics
 1x XT66DP-1000 optical rail 
 10x XT66C4 clamping platforms
-4x LMR2
-3x CP02
-2x packs of post holders PH50-P5
+2x packs of 5 post holders PH50-P5
+1x PH30 post holder
 1x TR30/P5
 1x TR40/P5
 1x TR50/P5
+4x LMR2
+2x CP02
+2x CP02T
 
-1x Screen or filter holder: DH1
-1x Translatable slide holder XYFM1
-1x Linear translation stage and cage rods for focusing: SM1Z and four ER2 posts
+
+Sample holders
+1x EDU-VS1 Post-Mountable White Polystyrene Viewing Screen
+1x DH1 filter holder
+1x XYFM1 Translatable slide holder 
+1x Linear translation stage and cage rods for focusing: SM1Z
+1x ER1-P4 (?) to attach the SM1Z
+
+
+Misc.
 1x RA180
-1x RA90 post clamps.
+1x RA90 post clamps
+2x post-mounted iris diaphragms (ID25)
+4x R2 post collars
 
 
 Optics
@@ -35,7 +46,7 @@ $f=-50 mm$ LC1715
 
 
 
-2x post-mounted iris diaphragms (ID25)
+Light sources
 LEDs (ADD THIS) 
 A 1'' SM1 tube (SM1L10) to make it easier to place the 25 mm lens near the LED.
 A power source for the LED. e.g. a 5V source and $200\Omega$ resistor. 
@@ -52,7 +63,6 @@ Tools
 1x Lens wrench for SM2: SPW604
 1x Hex keys such as CCHK or TC2 (TC3 for metric). 
 LMR2AP alignment target
-4x R2 post collars
 
 
 A laser pointer that fits into an RA180 post clamp that attaches to one end of a post.
