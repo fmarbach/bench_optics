@@ -1,70 +1,101 @@
 Bench optics parts list
 
 
-The assumed parts list is described here, but the same exercises can be carried out with similar parts. 
-Most of the following components are purchased from ThorLabs and imperial part numbers are listed.
-Metric parts are also available. 
-Each set up comprises the following components:
+The following is the parts list used at the Sainsbury Wellcome Centre (UCL) to complete 
+the bench optics exercises. Some of the more expensive parts are optional but nice to 
+have. The parts list includes more parts than are needed in order to provide students 
+with multiple ways of solving the same problem. Some parts listed below are re-used in
+other exercises. 
+
+Parts are from ThorLabs unless otherwise specified. Imperial part numbers are listed. 
 
 
-General optomechanics
+
+* General optomechanics
+The following are used to mount optical 
+
 1x XT66DP-1000 optical rail 
 10x XT66C4 clamping platforms
-2x packs of 5 post holders PH50-P5
-1x PH30 post holder
-1x TR30/P5
-1x TR40/P5
-1x TR50/P5
-4x LMR2
-2x CP02
-2x CP02T
+2x packs of 5 post holders PH50-P5 (10 in total)
+2x PH40 post holders
+7x TR75 75 mm posts
+7x TR50 50 mm posts
+4x TR40 40 mm posts
+4x TR30 30 mm posts
+4x LMR2 2" lens holders (post mountable)
+2x CP02 30 mm cage plate for 1" optics
+2x CP02T thick 30 mm cage plate for 1" optics
+1x SM1L10 1" SM1 lens tube
 
 
-Sample holders
-1x EDU-VS1 Post-Mountable White Polystyrene Viewing Screen
+* Sample holders
 1x DH1 filter holder
-1x XYFM1 Translatable slide holder 
-1x Linear translation stage and cage rods for focusing: SM1Z
-1x ER1-P4 (?) to attach the SM1Z
+1x EDU-VS1 Post-Mountable White Polystyrene Viewing Screen (optional)
+1x XYFM1 Translatable slide holder (optional)
+1x SMIZ Linear translation stage for objective (optional but recommended)
 
 
-Misc.
-1x RA180
-1x RA90 post clamps
-2x post-mounted iris diaphragms (ID25)
-4x R2 post collars
 
-
-Optics
-1x LED Collector lens: 1'', $f=25 mm$ LB1761 or $f=30~mm$ LA1805
-2x Field Lens/Condenser Lens: 2'', $f=60 mm$ LA1401
-$f=100~mm$ LA1050, $f=300 mm$ LA1256, $f=200 mm$ LA1979
-$f=300~mm$ achromatic doublet (AC508-300-A). Optional.
-$f=-50 mm$ LC1715
+* Optics
+More than enough lenses are included to allow for experimentation. 
+These are cheaper lenses and are to be used for the bench optics. 
+In some cases either plano-convex or bi-convex are listed. Either will work.
+1x LB1761 1" f=25 mm
+1x LB1811 1" f=35 mm
+2x LA1401 or LB1723 2" f=60 mm 
+1x LA1050 or LB1630 2" f=100 mm
+1x LA1979 or LB1199 2" f=200 mm
+1x LA1256 or LB1917 2" f=300 mm
+1x LC1715 1" f=-50 mm
 
 1x Olympus 4X objective (WD RMS4X) and RMS to SM1 coupler (SM1A3).
 
 
 
-Light sources
+* Misc.
+1x RA180
+1x RA90 post clamps
+2x post-mounted iris diaphragms (ID25)
+2x R2 post collars (optional)
+Each kit will need about 15 cap screws in each of a range of lengths from about 10 mm to 20 mm. 
+Screws should be M6 or 1/4"-20 depending on your equipment.
+
+* Cage system parts (optional)
+These parts are used to make cage systems, which are mainly important for 
+fluoresence imaging and building alignment jigs. For the bench optics 
+exercises alone you need purchase only the ER2 rods
+1x ER2-P4 used to attach the SM1Z to a cage plate or to place a lens near the LED
+1x ER3-P4 used to attach the SM1Z to a cage plate or to place a lens near the LED
+1x ER4-P4 used to attach the SM1Z to a cage plate or to place a lens near the LED
+1x ER6-P4 used to attach the SM1Z to a cage plate or to place a lens near the LED
+
+
+
+Light sources -- TODO
 LEDs (ADD THIS) 
-A 1'' SM1 tube (SM1L10) to make it easier to place the 25 mm lens near the LED.
+
+
 A power source for the LED. e.g. a 5V source and $200\Omega$ resistor. 
 Coverslips and a marker pen.
 
 Slides to image. Golgi stained brain slices work well. 
 Failing that, you could by a `toy' slide kit like that supplied by Celestron. 
+
 Electron microscopy grids of known pitch might be useful but aren't explicitly used in these exercises.
 A 1 to 2 m tape measure. 
-
-
-Tools
-1x Lens wrench for SM1 SPW606
-1x Lens wrench for SM2: SPW604
-1x Hex keys such as CCHK or TC2 (TC3 for metric). 
-LMR2AP alignment target
-
 
 A laser pointer that fits into an RA180 post clamp that attaches to one end of a post.
 
 A bright light source, such as a halogen lamp and light-guide. (TEST WITH LED)
+
+
+
+* Tools
+1x Lens wrench for SM1 SPW606
+1x Lens wrench for SM2: SPW604
+1x Hex keys such as CCHK or TC2 (TC3 for metric). 
+1x BD-050 0.050" Balldriver for 4-40 Setscrews (used for cage system set screws)
+1x LMR2AP alignment target (optional)
+1x MFT1 1m measuring tape or a longer one (up to about 2 m) from a different supplier
+1x Wera hex key set (not from Thor - optional)
+
