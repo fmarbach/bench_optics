@@ -26,6 +26,8 @@ The following are used to mount optical
 2x CP02 30 mm cage plate for 1" optics
 2x CP02T thick 30 mm cage plate for 1" optics
 1x SM1L10 1" SM1 lens tube
+1x LCP08 60 mm Cage Plate, SM2 Threads, Enhanced Clamping, 0.5" Thick (optional)
+1x LCP02 30 mm to 60 mm Cage Plate Adapter (optional)
 
 
 * Sample holders
@@ -98,4 +100,16 @@ A bright light source, such as a halogen lamp and light-guide. (TEST WITH LED)
 1x LMR2AP alignment target (optional)
 1x MFT1 1m measuring tape or a longer one (up to about 2 m) from a different supplier
 1x Wera hex key set (not from Thor - optional)
+
+
+
+* For laser alignment (beam walking) exercise
+1x KM100CP Post-Centered mirror mount
+2x KM100 regular mirror mounts
+
+
+
+
+* General parts for 2p
+2x SM1EC2B Snap-On Plastic Dust Cap for SM1 Lens Tubes, 5 Pack
 
