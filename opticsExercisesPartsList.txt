@@ -15,10 +15,14 @@ Parts are from ThorLabs unless otherwise specified. Imperial part numbers are li
 The following are used to mount optical 
 
 1x XT66DP-1000 optical rail 
+1x 500 mm rail
+4x CL5 clamps
+1x XE25CL2 clamp
 10x XT66C4 clamping platforms
 2x packs of 5 post holders PH50-P5 (10 in total)
 2x PH40 post holders
-7x TR75 75 mm posts
+1x PH30 post holder
+3x TR75 75 mm posts
 7x TR50 50 mm posts
 4x TR40 40 mm posts
 4x TR30 30 mm posts
@@ -26,8 +30,12 @@ The following are used to mount optical
 2x CP02 30 mm cage plate for 1" optics
 2x CP02T thick 30 mm cage plate for 1" optics
 1x SM1L10 1" SM1 lens tube
+1x SM1L05 0.5" SM1 lens tube
+1x SM1L03 0.3" SM1 lens tube
 1x LCP08 60 mm Cage Plate, SM2 Threads, Enhanced Clamping, 0.5" Thick (optional)
 1x LCP02 30 mm to 60 mm Cage Plate Adapter (optional)
+1x SM1T2 to couple camera to cageplate
+1x SM1A9 to couple camera to an SM1 tube
 
 
 * Sample holders
@@ -49,6 +57,7 @@ In some cases either plano-convex or bi-convex are listed. Either will work.
 1x LA1979 or LB1199 2" f=200 mm
 1x LA1256 or LB1917 2" f=300 mm
 1x LC1715 1" f=-50 mm
+1x f=300 mm SM1 for fluorescence (tube lens)
 
 1x Olympus 4X objective (WD RMS4X) and RMS to SM1 coupler (SM1A3).
 
@@ -66,10 +75,11 @@ Screws should be M6 or 1/4"-20 depending on your equipment.
 These parts are used to make cage systems, which are mainly important for 
 fluoresence imaging and building alignment jigs. For the bench optics 
 exercises alone you need purchase only the ER2 rods
-1x ER2-P4 used to attach the SM1Z to a cage plate or to place a lens near the LED
-1x ER3-P4 used to attach the SM1Z to a cage plate or to place a lens near the LED
-1x ER4-P4 used to attach the SM1Z to a cage plate or to place a lens near the LED
-1x ER6-P4 used to attach the SM1Z to a cage plate or to place a lens near the LED
+2x ER1.5 rods
+1x ER2-P4
+1x ER3-P4
+1x ER4-P4
+1x ER6-P4
 
 
 
