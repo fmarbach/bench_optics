@@ -86,20 +86,15 @@ exercises alone you need purchase only the ER2 rods
 Light sources -- TODO
 LEDs (ADD THIS) 
 
-
-A power source for the LED. e.g. a 5V source and $200\Omega$ resistor. 
 Coverslips and a marker pen.
 
-Slides to image. Golgi stained brain slices work well. 
-Failing that, you could by a `toy' slide kit like that supplied by Celestron. 
+Slides to image. 
+
 
 Electron microscopy grids of known pitch might be useful but aren't explicitly used in these exercises.
 A 1 to 2 m tape measure. 
 
 A laser pointer that fits into an RA180 post clamp that attaches to one end of a post.
-
-A bright light source, such as a halogen lamp and light-guide. (TEST WITH LED)
-
 
 
 * Tools
