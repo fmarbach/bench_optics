@@ -28,6 +28,12 @@
 
 
 
+\usepackage{wasysym}
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%  Hypertext references for Acrobat                             %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,8 +60,8 @@ pdfproducer = {dvips + ps2pdf}
 \end{center}
 
 \section{Introduction}
-So far you have focused on image formation, however one of the challenges of microscopy is to adequately illuminate the sample. 
-By this we mean that the sample should be illuminated uniformly from a suitably wide range of angles. 
+One of the key challenges of microscopy is to adequately illuminate the sample. 
+By this we mean that the sample should be illuminated uniformly and from a suitably wide range of angles. 
 Different samples are best illuminated in different ways.
 In transmission microscopy, the sample is illuminated from the opposite side to which it is imaged. 
 In fluorescence microscopy, the sample is illuminated from the same side, with the objective also serving as the condenser. 
@@ -65,7 +71,8 @@ In the following exercises you will build two different illumination systems: cr
 
 \subsection{Critical illumination of a sample}
 In critical illumination the light source is focused onto the specimen (Fig.~\ref{critIlum}).
-First you will set up critical illumination with one lens:
+This provides illumination from a range of angles but has a major drawback which will become apparent soon. 
+You will first you will set up critical illumination with one lens:
 
 \begin{figure}[h]
 \center
@@ -77,12 +84,11 @@ First you will set up critical illumination with one lens:
 
 \begin{itemize}
 \item Hint: to avoid running out of $50~mm$ posts in the exercise that follows, use $30~mm$ or $40~mm$ posts for the 2'' lenses, sample holder, and card holder.
-\item Place the light source at one end of the rail and then put an $f=25~mm$ or $f=30~mm$ 1'' lens at $2f$ from it.
-\item Place your sample at $2f$ on the other side, where the image of the LED emitter or fiber bundle is formed.
-Note that you can place a glass slide in a DH1 card holder (the black clip) by removing a clip on one side and loosening the screws a bit.
-\item Move the slide back and forth until an image of the LED emitter appears on it. Use paper to help you see this if needed.
+\item Place the light source at one end of the rail and then put a 1''{\diameter} $f=25~mm$ or $f=35~mm$ lens at $2f$ from it.
+\item Place your sample at $2f$ on the other side, where the image of the LED emitter is formed.
+\item Move the slide back and forth along the rail until an image of the LED emitter appears on it.
 \item Place the 4x objective after the slide. This objective has a working distance of about $20~mm$.
-\item At the other end of the rail, place a viewing card onto which you will form an image.
+\item At the other end of the rail, place a viewing screen onto which you will form an image.
 \item Position an $f=200~mm$ lens $1f$ from the card. This is known as the tube lens and will image the sample onto the card
 \footnote{The $f=200~mm$ lens will yield 4x. You could use the $f=300~mm$ lens if you wish, to yield 6x.}.
 \item Move the objective back and forth a small distance to focus and obtain an image. 
@@ -93,17 +99,16 @@ As you might expect, the image of the sample also contains an image of the light
 This is obviously not ideal.
 Before we go on to address this problem, let's improve the illumination by capturing more of the light from the source. 
 The plan is as follows (don't build it yet):
-We will add a $f=60~mm$ after the $f=30~mm$ lens, forming an infinite conjugate system. 
+We will add an 2''{\diameter} $f=60~mm$ before the sample, forming an infinite conjugate system with the existing lens. 
 The lens nearer the source is known as the \textbf{collector lens} and will be at $1f$ from the source.
 The lens nearer the sample is known as the \textbf{condenser lens} and is at $1f$ from the sample. 
 This is still critical illumination, since the light source will be imaged onto the sample, but the collector lens will be closer to the source and so more light will be captured. We will align the lenses with the laser pointer:
 
 \begin{itemize}
 \item Remove all the posts (not the rail carriages) from the rail.
-\item Add all 10 post and rail carriage assemblies to your rail. As you proceed, keep in mind that you will need 6 carriages between the objective and the light source.
+\item Add all 10 post and rail carriage assemblies to your rail. You will need 6 carriages between the objective and the light source.
 \item Replace the light source with the laser pointer on a $75~mm$ post. 
-\item Use an iris as before to align the beam. However, this time you will have to move it between post holders and maintain its height with an RA90 (90 degree clamp) 
-attached to the iris post (Fig.~\ref{fig:clampedIris}) since you won't be able to slide it up and down the rail.
+\item Use an iris as before to align the beam. However, this time you will have to move it between post holders and maintain its height with a post collar since you won't be able to slide it along the rail.
 \item Replace the tube lens and position it at the same height as the beam. Use the iris to help you.
 \item Add objective upstream of the tube lens. Get the laser beam hitting the middle of the of front element. 
 \item Now place the iris in the specimen's post holder and locate the $f=60~mm$ condenser lens next to it, using the iris as a target. 
@@ -116,18 +121,10 @@ attached to the iris post (Fig.~\ref{fig:clampedIris}) since you won't be able t
 \end{itemize}
 
 
-\begin{figure}[h]
-\center
-\includegraphics[width=3in]{clamped_iris.eps}
-\caption{A clamp used to maintain the iris height so it can easily be moved between post holders}
-\label{fig:clampedIris}
-\end{figure}
-
 With an infinite conjugate illumination system it becomes possible to regulate the NA of the illumination by varying the size of the iris in the infinite space. 
 Try it!
 By altering the NA of the illuminated light, the iris provides control over the resolution, contrast, and depth of field (Fig.~\ref{fig:critical_iris}).
-To see the effect: open the iris, defocus slightly by moving the objetive, now close the iris. The image will go back into focus. 
-You could also draw a cross on a coverslip with a marker and lay over your sample, then open and close the iris.
+To see the effect: open the iris, defocus slightly by moving the objective, now close the iris. The image will go back into focus. 
 
 \begin{figure}[h]
 \center
@@ -142,8 +139,6 @@ Note how closing the iris restricts the range of angles reaching the sample.}
 
 
 \clearpage
-
-\subsection{K\"{o}hler Illumination}
 
 \subsection{K\"{o}hler Illumination}
 K\"{o}hler illumination is an important and commonly used technique in light microscopy, as it provides even illumination of the sample whilst ensuring the light source (e.g. the bulb filament) is not visible. 
