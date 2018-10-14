@@ -52,23 +52,18 @@ pdfproducer = {dvips + ps2pdf}
 \textbf{\Large{Laser Routing and Alignment}}
 \end{center}
 
-A thorough understanding of beam alignment is absolutely critical for being able to build a scanning microscope. 
-When we say `beam alignment' we refer to the process of routing a laser beam precisely along a defined path. 
+A thorough understanding of beam alignment is critical for building a scanning microscope. 
+`Beam alignment' refers to the process of routing a laser beam precisely along a defined path. 
 Optical elements such as lenses are generally inserted into the path defined by the beam. 
-For example, later today you will route a beam into a scan head and have it emerge going straight down the optical rail.
-
-In most situations the laser is in a fixed position but its beam must pass precisely through a series of optical elements. 
-We use small flat \textit{first surface} mirrors to route the beam through the required path. 
-The aim of this exercise is to use mirrors to redirect a laser beam coming in at an arbitrary angle through a specific line at a specific height above the table.
-Do not touch the mirror surfaces! 
-They are delicate.
+In most situations the laser is in a fixed position and is directed using flat \textit{first surface} mirrors.
+The aim of this exercise is to redirect a laser beam through a specific line at a specific height above the table using two mirrors.
+Do not touch the reflective mirror surfaces!
 
 
 \section{Aligning the beam through a path defined by two points}
 Your goal is to set up a laser pointer, two mirrors, and two irises in order to achieve the state shown in Fig.~\ref{fig:ex1}. 
-The irises and $mirror_2$ are shown mounted on a rail, but this isn't necessary. 
-You can also clamp these three components to the breadboard.
-The only restriction is that they need to form a line. 
+The beam should pass straight through the irises, the exact locations of the other components is not important. 
+The mirror holder mounted on the rail ($mirror_2$) should be a KM100CP/M. 
 Separate the irises by as much space as possible and keep $mirror_2$ fairly close to $iris_1$.
 Once this is established, add $mirror_1$ such that it is square with $mirror_2$ and at least about $10~cm$ away from it. 
 Finally, set up the laser pointer such that the beam hits $mirror_1$.
@@ -77,7 +72,7 @@ Now the fun starts\ldots
 
 \begin{figure}[h]
 \center
-\includegraphics[width=2.0in]{laser_alignment_exercise_basic.eps}
+\includegraphics[width=1.50in]{laser_alignment_exercise_basic.eps}
 \includegraphics[width=3.25in]{alignment_CAD_01.eps}
 \caption{Your goal is to send the beam through the two irises by altering the tilt of the two mirrors.}
 \label{fig:ex1}
@@ -90,6 +85,7 @@ If the mirrors are initially very mis-positioned you might also need to translat
 To complete the exercise you will need to understand the following keys points:
 
 \begin{enumerate}
+\setlength\itemsep{0.1em}
 \item Adjusting $mirror_1$ \textit{translates} the beam across the surface of $mirror_2$.
 \item Adjusting $mirror_2$ alters \textit{the angle} with which the beam goes through the irises. 
 \item As a consequence of (1), you adjust $mirror_1$ to pass the beam through $iris_1$.
@@ -101,7 +97,7 @@ To complete the exercise you will need to understand the following keys points:
 Here is how you will implement the above:
 
 \begin{enumerate}
-\item Close $iris_1$ and adjust $mirror_1$ to position the beam at the centre of $iris_1$.
+\item Close $iris_1$ and adjust $mirror_1$ to position the beam at the centre of $iris_1$. \textit{Use the adjustment screws for fine positioning only. For coarse postioning, rotate the post.}
 \item Open $iris_1$ and rotate $mirror_2$ to position beam at centre of closed $iris_2$. 
 The process of doing this will move the beam away from the centre of $iris_1$. 
 The degree to which this happens depends on the distance between $mirror_2$ and $iris_1$.
@@ -111,7 +107,6 @@ If aligned, stop.
 
 \subsubsection{Tips}
 \begin{itemize}
-
 \item If after repeated attempts at alignment you keep failing, this indicates that a mirror (probably mirror 2) is mis-positioned. 
 \item Only use right angles. 
 Whilst it is possible to use very acute angles and still solve the alignment task, you will have a larger mirror area to play with if you reflect the beam at 90 degree angles.
