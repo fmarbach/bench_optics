@@ -60,11 +60,10 @@ It is helpful to have the free \textbf{ray optics simulator} from the Google Pla
 
 \section{Before beginning}
 \begin{itemize}
-\setlength\itemsep{0.1em}
-\item \textbf{Do not} force parts together. All parts should screw together or fit together very easily.
-\item \textbf{Do not} over-tighten screws. Gentle pressure with an Allen key is sufficient. 
-\item \textbf{Do not} touch the coated surface of mirrors or optical filters. 
-\item Each group is responsible for tidying and organising their optical set at the end of the week. All parts should be present and in their correct locations as show on the course wiki page. 
+    \item \textbf{Do not} force parts together. All parts should screw together or fit together easily.
+    \item \textbf{Do not} over-tighten screws. Gentle pressure with a long-handled Allen key is sufficient. 
+    \item \textbf{Do not} touch the coated surface of mirrors or optical filters. 
+    \item Each group is responsible for tidying and organising their optical set at the end of the week. All parts should be present and in their correct locations as show on the course wiki page. 
 
 \end{itemize}
 
@@ -139,15 +138,15 @@ Your first task is to set up the LED on the optical rail:
 
 \begin{itemize}
 \item Attach a post holder to a rail carriage (Fig.~\ref{fig:post}) and place this on the rail. 
-\item Screw a 50~mm post to the white LED cage plate.
+\item Place the LED in the SM1 holder and attach this to a cage plate (CP02) and mount this on a 50~mm post. 
 \item Mount the post to your post-holder and place the LED at one end of the rail.
-\item Power the LED using the LED driver, cable, and PSU found in the 21 liter parts box.
+\item Power the LED (remembering to use the current-limiting resistor). 
 \end{itemize}
 
 
 Now choose a lens with a focal length of about $f=100~mm$ and attach the lens to a lens holder using the lens wrench and a retaining ring (this should already be in the lens holder).
 Mount the lens on another carriage and attach to the rail next to the LED. 
-Get the LED roughly aligned with the middle of the lens (precise alignment isn't important). 
+Get the LED aligned with the middle of the lens (precise alignment isn't important). 
 
 You will use this lens to form an image of the LED.
 This is called \textbf{finite conjugate} imaging because the image is paired (i.e. conjugated) with an object at a finite distance from it.
@@ -161,30 +160,23 @@ If all you see is a blur, you have not formed an image.
 \item Why is no image formed? 
 Hint: draw a diagram with the object at $<1f$. Plot just two rays: the undeflected ray and the ray coming out parallel with the optical axis and then going through $1f$ on the image side. 
 How do the rays behave after they have passed through the lens?
+
 \item Verify that an image is formed when the lens is $>1f$ from the LED: place a card very far from the LED (e.g. at $10f$ or $20f$) and slowly move the lens away from the LED. 
 What is the distance between the LED and the lens at which you see an image? 
 It should be just over $1f$.
-\item Measure $s_i$ for three values of $s_o$ and fill in the table below. 
-Using equation~\ref{eq:thinlens}, calculate $f$ for each value of $s_o$.
+
+\item You could use the above approach to estimate the focal length of an unknown lens, however it's hard to tell when the source is at $1f$. 
+What is an easier way of estimating focal length? (Hint: you may not need the rail)
+
 \item What is the value of $s_i$ when $s_o=2f$?
 \end{itemize}
 
-\vspace{2em}
-\begin{tabular}{| p{1cm} | p{1cm} | p{1cm} |}
-\hline
- $s_o$  &  $s_i$  &  $f$  \\
-\hline
-\hline
- & & \\ \hline
- & & \\ \hline
- & & \\ \hline
-\end{tabular}
 
 
 \clearpage
 
 \subsubsection{2. Magnifying the image}
-As you probably noticed, the size of the image of the LED emitter varied with $s_o$.
+As you might recall, the size of the image of the LED emitter varied with $s_o$.
 A lens produces images of different magnifications depending on $s_o$; an image can always be formed when $s_o>f$. 
 The magnification of a lens is calculated as follows:
 
@@ -205,8 +197,8 @@ We will now see what happens when the rays come from infinity:
 
 \begin{itemize}
 \item Mount a lens of about $f=60~mm$ in a holder and attach a post to it. 
-Use this this to form an image of a distant object such as the room's lighting fixtures
-The image is formed at about $1f$.
+Go over to the window and form an image of the outside world on a piece of paper. 
+The image is formed at $1f$.
 \item Repeat with a lens of about $f=100~mm$ lens. 
 What two things do you notice about the image? 
 \item Fig.~\ref{fig:outside} models the situation you saw. Satisfy yourself that this provides a reasonable explanation. 
@@ -408,7 +400,7 @@ Arrange 4 lenses so as to form a de-magnified, real, upright image. Hints:
 \item There are multiple solutions to this problem.
 \end{itemize}
 
-\vspace{8em}
+\clearpage
 
 \subsection{Bonus Exercise: Compound Lenses \& Optical Aberrations}
 \begin{wrapfigure}{R}{0.22\textwidth}
@@ -426,16 +418,16 @@ After this exercise you will have learned:
     \item Why thin lens ray tracing does not capture aberrations.
     \item What is chromatic aberration and how it can be corrected.
     \item What are spherical aberration (SA) and coma.
-    \item How aberrations can be reduced by using smaller ray angles.
+    \item Why large angle rays are more likely to produce aberrations.
+    \item Addition of pupils or increasing focal ratio can reduce aberrations.
+    \item Adding optical elements can decrease ray angles and reduce aberrations.
 \end{itemize}
 
 
 \subsubsection{Limitations of the thin lens approximation}
-The ray tracing you've learned is good for planning simple optical systems but offers no information about image quality. 
+The ray tracing you've learned is good for planning simple optical systems (including two photon microscopes) but offers no information about image quality. 
 This is because your ideal `thin lenses' always observe the image forming condition: all rays leaving a point on the sample plane converge onto a point on the image plane. 
-In reality the image forming condition does not always hold. 
-Rays hitting the lens at steeper angles will come into focus at a position other than that predicted by thin lens ray tracing. 
-This is worse for steeper ray angles and more curved lenses. 
+In reality the image forming condition often does not quite hold. 
 Image `\textbf{aberrations}' occur when rays leaving a point in the sample do not all converge in the image plane.
 Rays instead converge in different locations according to a systematic pattern which depends upon the form of the aberration. 
 The the three most common aberrations are chromatic aberration, spherical aberration, and coma (Fig.~\ref{fig:aberrations}). 
@@ -451,7 +443,6 @@ Coma is the situation where off-axis light does not come into focus in the same 
 \end{figure}
 
 
-\clearpage
 
 \subsubsection{Chromatic aberration}
 Blue light is refracted more strongly than red light and so the focal length of a lens is wavelength dependent. 
@@ -460,14 +451,14 @@ This leads to a pronounced wavelength-dependent blurring of the image known as c
 You will now build a telescope on the 500 mm optical rail:
 \begin{itemize}
 \item Use an f=300~mm for the objective and an f=25~mm for the eyepiece. 
-\item Look through your telescope at an object across the room. How does the chromatic aberration manifest itself?
-\item Ask for the f=300~mm achromat and swap your singlet lens with this. Observe the image again.
+\item Look through your telescope at distant objects. How does the chromatic aberration manifest itself?
+\item Ask for the f=300~mm achromat and swap your singlet lens with this. Note how the chromatic aberration has been corrected? 
 \end{itemize}
 
 \textbf{How does it work?} 
 The first element of the achromat is a positive lens that will converge light. 
 The second element is a negative lens that will diverge light.
-This second element has a lower power and so together the elements of the achromat constitute a positive lens. 
+This second element has a lower power and so together the elements of achromat constitute a positive lens. 
 The two elements are made of glass with different indexes of refraction. 
 The second (negative) element has a stronger index of refraction. 
 Thus, the second lens diverges blue light more strongly than the first lens can focus it.
@@ -481,35 +472,27 @@ Coarsely speaking, the second lens of the achromatic doublet disperses light in 
 
 
 
-\subsubsection{Spherical Aberration \& Coma and Ray Angles}
-Look through your telescope and pay attention to how the image quality varies across the field of view. 
-What do you see?
-What you see is likely due to various different aberrations. 
-Let's try to clean up the image. 
+\subsubsection{Spherical Aberration}
 
-Examine Fig.~\ref{fig:aberrations}, whilst it doesn't show how SA and coma arise it does allow us to predict that these aberrations will be less prominent if the outer rays are removed. 
-Place an iris on a rail carriage and locate it around 15 cm behind the objective lens. 
-Close the iris whilst looking through the telescope. 
-As the iris closes, fine features at the edges of the field will become sharper but the field of view doesn't change. 
+As you will have noticed above, image quality tends to be best in the centre of the field of view and decreases towards the edges. 
+A variety of aberrations are at play and these tend to become progressively worse for light coming in at steeper angles to the optical axis.
 
 
+Note that in objectives and eyepieces the light doesn't pass through a focal point within the device and so they can be considered to be a single complex lens.
+
+
+Here we will experiment with a simple composite optical arrangement: the Pl\"{o}ssl eyepiece (Fig.~\ref{fig:composite}). 
+Pl\"{o}ssls are commonly used in amateur astronomy because they are not expensive and provide a relatively wide (50 degree) field of view that is of good 
+quality if the eyepiece is well made. 
+Pl\"{o}ssls also make suitable scan lenses for two photon microscopy\footnote{Negrean \& Mansvelder, 2014, PMID: 24877017}.
+You will now construct a Pl\"{o}ssl using two $f=60~mm$  achromatsÂ.
 
 
 \subsubsection{Compound Eyepieces}
-Using an iris (known as a `pupil`) to reduce ray angles is a common approach for taming aberrations but it is limited since it of course also reduces light. 
-A another approach is to bend light over multiple optical elements so the rays strike the surfaces at smaller angles. 
+Aberrations are generally corrected by combining optical elements with complementary aberrations. 
+Another approachs is to bend light over multiple optical elements so light strikes surfaces at smaller angles. 
 This avoids introducing aberrations in the first place. 
-You will now replace the $f=25~mm$ lens with a compound lens of similar focal length (Eq.~\ref{eq:compoundLensF} shows how to calculate the effective focal length of two thin lenses separated in air by some distance $d$). 
-A compound lens is one where the optical elements are spaced closely together. 
-Ask for one of the two compound lenses: one is known as a Pl\"{o}ssl eyepiece, which is composed of two closely spaced achromats (Fig.~\ref{fig:composite}), the other is composed of two plano-convex singlet lenses. 
-Note the image improvement at the field edges with the compound eyepieces. 
-What differences do you see in image quality between the two compound eyepices?
 
-
-\begin{equation}
-\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1f_2}
-\label{eq:compoundLensF}
-\end{equation}
 
 
 \begin{figure}[h]
@@ -518,6 +501,31 @@ What differences do you see in image quality between the two compound eyepices?
 \caption{The Pl\"{o}ssl eyepiece is composed of two sets of achromatic doublet lenses (bottom).}
 \label{fig:composite}
 \end{figure}
+\begin{itemize}
+\item First construct a beam expander ($f_1$=30~mm lens and a $f_2$=300~mm). 
+The expanded beam will be directed into your eyepiece, which will make it easier to measure its focal length.
+\item Build the Pl\"ossl by placing the two $f=60~mm$ lenses as close as possible (with their flat sides facing outwards if you have plano-convex lenses). 
+You might need to move the post holders on the rail carriages to allow the lenses to meet.
+Since collimated light leaves your beam expander, you can place the Pl\"ossl at any distance from the $f=300~mm$ lens. 
+\item Verify that your Pl\"{o}ssl behaves more or less as expected: 
+Eq.~\ref{eq:compoundLensF} gives the distance between the middle of the compound lens and the focal point. 
+\item Separate your lens elements by about 15~mm and measure and measure the change in focal length.
+\end{itemize}
+
+The effective focal length of two thin lenses separated in air by some distance $d$ is given by
+\begin{equation}
+\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1f_2}
+\label{eq:compoundLensF}
+\end{equation}
+
+
+Build a telescope using $f=300~mm$ singlet lens for the objective and a $30~mm$ lens for the eyepiece. 
+Look through it familiarise yourself with what the image looks like then replace the eyepiece with your Pl\"{o}ssl. 
+The magnification will be similar, but the image quality should be better: you'll get a wider apparent field of view and substantially less pincushion distortion. 
+You will still see chromatic aberration. 
+If you have an achromatic $f=300~mm$ doublet, then you can use this as the objective to get a reduction in chromatic aberration and a sharper image. 
+Your telescope is powerful enough to see the moons of Jupiter. 
+
 
 
 \end{document}
