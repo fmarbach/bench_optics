@@ -406,7 +406,8 @@ Arrange 4 lenses so as to form a de-magnified, real, upright image. Hints:
 \item There are multiple solutions to this problem.
 \end{itemize}
 
-\vspace{8em}
+
+
 
 \subsection{Bonus Exercise: Compound Lenses \& Optical Aberrations}
 \begin{wrapfigure}{R}{0.22\textwidth}
@@ -449,7 +450,6 @@ Coma is the situation where off-axis light does not come into focus in the same 
 \end{figure}
 
 
-\clearpage
 
 \subsubsection{Chromatic aberration}
 Blue light is refracted more strongly than red light and so the focal length of a lens is wavelength dependent. 
@@ -495,15 +495,13 @@ As the iris closes, fine features at the edges of the field will become sharper 
 
 \subsubsection{Compound Eyepieces}
 Using an iris (known as a `pupil') to reduce ray angles is a common approach for taming aberrations but it is limited since it of course also reduces light. 
-A another approach is to bend light over multiple optical elements so the rays strike the surfaces at smaller angles. 
-This avoids introducing aberrations in the first place. 
+A better approach is to choose lenses such that you avoid introducing aberrations in the first place. 
 You will now replace the $f=25~mm$ lens with a compound lens of similar focal length (Eq.~\ref{eq:compoundLensF} shows how to calculate the effective focal length of two thin lenses separated in air by some distance $d$). 
 A compound lens is one where the optical elements are spaced closely together. 
-Ask for one of the two compound lenses: one is known as a Pl\"{o}ssl eyepiece, which is composed of two closely spaced achromats (Fig.~\ref{fig:composite}), the other is composed of two plano-convex singlet lenses. 
+Ask for one of the two compound lenses: one is is composed of two plano-convex singlet lenses (Fig.~\ref{fig:composite}, right)
+and the other is known as a Pl\"{o}ssl eyepiece, which is composed of two closely spaced achromats. 
 In what ways has the image improved compared to the single $f=25~mm$ lens?
-Pay attention to the field edges. 
-What differences do you see in image quality between the two compound eyepieces?
-
+Is the Pl\"{o}ssl better than the singlet pair?
 
 \begin{equation}
 \frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1f_2}
@@ -513,9 +511,22 @@ What differences do you see in image quality between the two compound eyepieces?
 
 \begin{figure}[h]
 \center
-\includegraphics[width=2.2in]{Plossl.eps}
-\caption{The Pl\"{o}ssl eyepiece is composed of two achromatic doublet lenses.}
+\includegraphics[width=4.5in]{eyepiece_compare.eps}
+%\includegraphics[width=2.15in]{Plossl.eps}
+\caption{Ray diagrams of two of the eyepieces you have access to. Left: $f=25~mm$ plano-convex singlet (you might have a bi-convex version). 
+Right: $f=25~mm$ compound lens composed of two $f=50~mm$ singlet lenses. 
+Blue rays are on-axis. 
+Green rays arise from an object 1 degree off-axis. }
 \label{fig:composite}
 \end{figure}
+
+
+\textbf{Why does the compound lens clean up the image edges?} 
+The simple answer is that the singlet lens must bend off-axis light by a large amount as it exits (Fig.~\ref{fig:composite}) and this is sufficient to induce large aberrations. 
+Even in this low resolution ray diagram, you can see that the green ray is not collimated upon exiting the lens.
+The doublet lens spreads the `work' across more surfaces and so avoids introducing aberrations. 
+The green rays leaving the final surface remain collimated. 
+
+
 
 \end{document}
