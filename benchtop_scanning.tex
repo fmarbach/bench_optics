@@ -42,14 +42,14 @@
 
 \section{Introduction}
 
-In widefield microscopy the entire field of view is illuminated and a great deal of \textbf{scattered} light from outside of the focal plane ends up in the image plane. 
+In widefield microscopy the entire field of view is illuminated and a great deal of scattered light from outside of the focal plane ends up in the image plane. 
 These scattered photons create blur and reduce contrast since they fail to satisfy the image-forming condition, arriving at the image plane at a location \textit{not conjugate} with their origin.
 Fluorescence-based scanning microscopy can greatly mitigate the problem of scattering. 
 A laser beam is scanned across the sample where it excites fluorophore molecules. 
 Emitted fluorescence is collected via the objective and detected at a photomultiplier tube (PMT). 
 No image is formed on the PMT (it's a `single pixel'), instead the image is constructed \textit{post-hoc} on a computer with the spatial origin of the emitted fluorescence determined by the position of the laser beam in time.
-In confocal microscopy, emitted fluorescence arising away from the focal point is rejected by a pinhole in front of the PMT. 
-With 2-photon, the excitation spot is highly restricted so the origin of all collected photons is known (Fig.~\ref{1pvs2p}). 
+In confocal microscopy, emitted fluorescence arising away from the focal point is rejected by a pinhole conjugate with the sample and near the PMT. 
+With 2-photon microscopy, the excitation spot is highly restricted so the origin of all collected photons is known (Fig.~\ref{1pvs2p}). 
 
 \begin{figure}[h]
 \centering
@@ -78,10 +78,6 @@ The goals of today are:
 \section{Driving the scan mirrors}
 A scanning microscope has two scan mirrors (`galvos'): one for $x$ and one for $y$ motion.
 Each galvo is connected to a driver card that both powers it and controls the mirror position angle (Fig.~\ref{scanners}). 
-Each driver card has a single analog input that is used to set the mirror angle. 
-You will now wire these up and get the mirrors moving back and forth. 
-Your first job, however, is to route the beam of a laser pointer into the scanners such that it exits parallel with an optical rail.
-You will use the beam to form images and observe scan patterns. 
 
 
 \begin{figure}[h]
@@ -91,7 +87,6 @@ You will use the beam to form images and observe scan patterns.
 \label{scanners}
 \end{figure}
 
-\subsection{Aligning the beam}
 Set up the rail as shown in Fig.~\ref{scannersOnRail}.
 The scanners are bolted to the rail via the LCP11/M.
 The rail carriage with the iris should be able to freely slide up and down the length of the whole rail.
@@ -107,7 +102,7 @@ The two mirrors will route the beam into the scanner box.}
 \end{figure}
 
 \noindent
-Direct the laser beam using two adjustable mirrors such that it hits the middle of the scan mirrors then comes out at 90 degrees with respect to the incoming beam (as shown in Figs.~\ref{scannersOnRail} \& ~\ref{scannersAndBeam}). 
+Direct the laser beam using two adjustable mirrors such that it hits the middle of the scan mirrors then comes out at 90 degrees with respect to the incoming beam (as shown in Fig.~\ref{scannersOnRail}). 
 Using the iris as a target, ensure the beam runs straight down the rail. 
 Move the scanners or even the rail if you need to.
 It's OK for our purposes if the alignment isn't \textit{perfect}: a couple of beam diameters is adequate. 
@@ -120,30 +115,23 @@ Tips:
 \end{itemize}
 
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=2.0in]{beamintoscanner.png}
-\caption{Route the laser beam into the scanners using two mirrors.}
-\label{scannersAndBeam}
-\end{figure}
+\clearpage
 
 \subsection{Controlling the scan mirrors}
 
 \begin{itemize}
-    \item Connect the analog input of the $x$ galvo mirror (the wires labeled `control` and `ground`) to analog output zero (\texttt{AO0}) and its ground connection.
-    Connect the $y$ galvo mirror input to \texttt{AO1} in the same way. 
     \item Open NI MAX (Measurement \& Automation Explorer),
         \begin{enumerate}
             \setlength\itemsep{0.15em}
             \item Select the DAQ device from the list on the left then hit `Test Panels'. 
-            \item Select the `Analog Output' tab (Fig.~\ref{DAQMX}), which will open with \texttt{AO0} selected.
+            \item Select the `Analog Output' tab (Fig.~\ref{DAQMX}).
             \item Set `Mode' to `Voltage Sinewave Generation' and set the amplitude to about `5V'.
             \item Leave the `Rate' at `1000'. This will produce a 1~Hz sine wave.
-            \item Press `Start' to begin playing the sinewave out of AO0.
-            \item The first (smaller) scanner will move back and forth at 1~Hz and the beam will swing with it.
+            \item Connect the analog outputs to the osciloscope and confirm you get waveforms out of both channels. 
         \end{enumerate}
-    \item Stop the sine wave generation by pressing `Stop' and try driving the $y$ mirror.
-    \item Stop the sine wave. Set the `Rate' to `50,000' to produce a 50~Hz motion. What does the outgoing beam look like now?
+
+    \item Turn on the laser, copy signals to the scanner controller analog inputs and try driving the scan mirrors with the 1~Hz signal.  
+    \item Set `Rate' to `50,000' to produce a 50~Hz motion. What does the outgoing beam look like now?
     \item Now try the `DC' option under `Mode' and explore what happens when you apply a variety of constant non-zero voltages (press `Update' to apply your chosen voltage to the device).
 \end{itemize}
 
@@ -153,28 +141,6 @@ Tips:
 \includegraphics[width=3.5in]{MAX_for_1D.png}
 \caption{The NI MAX test panel for analog output.}
 \label{DAQMX}
-\end{figure}
-
-
-\clearpage
-\section{Obtaining a 1-D image}
-\begin{itemize}
-    \setlength\itemsep{0.15em}
-    \item Set both scanners to their mid-point (0V) and place a ThorLabs photodiode about 30 cm away from the scanners with the beam hitting its center. 
-    \item Ensure the photodiode is powered on and feed its analog output to an oscilloscope. 
-    \item Create a 0.5~Hz sinewave that moves the beam along one axis and set the amplitude such that it traverses the photodiode and just falls out of the active area on either side. Probably you will need an amplitude of about 0.5 V.
-    \item Satisfy yourself that you understand why the resulting osciloscope trace looks as it does (example trace at Fig.~\ref{PD}, left).
-    \item Stick a small strip of tape (about 2 mm wide) onto a coverslip or slide and place it in front of the photodiode as shown in Fig.~\ref{PD}, right. 
-    \item Satisfy yourself that the oscilloscope is effectively displaying a 1-D image of the tape strip. 
-\end{itemize}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=2.5in]{trace_photodiode.png}
-\includegraphics[width=2.08in]{PhotoDiode_with_tape.png}
-\caption{Left: Osciloscope trace derived from the beam scanning across the surface of an unobstructed photodiode.
-         Right: photodiode with slide and attached tape. }
-\label{PD}
 \end{figure}
 
 
@@ -188,8 +154,8 @@ Before starting, make the following modifications to the DAQ breakout box.
 
 \begin{itemize}
     \setlength\itemsep{0.15em}
-    \item Copy \texttt{AO0} to \texttt{AI0+} by linking the two terminals with a wire. Connect \texttt{AI0-} to the \texttt{AO0} ground connection. This will allow us to acquire and monitor the $x$ galvo command signal.
-    \item Connect \texttt{AI1+} to the white galvo position output lead.  Connect \texttt{AI1-} to \texttt{AI0-}, linking the ground connections. This will allow us to compare the actual mirror position with the command position.
+    \item Copy \texttt{AO0} to \texttt{AI0} with a BNC cable. will allow us to acquire and monitor the $x$ galvo command signal.
+    \item Connect \texttt{AI1} to the galvo position output lead. This will allow us to compare the actual mirror position with the command position.
 \end{itemize}
 
 \noindent
@@ -200,8 +166,7 @@ The class is part of the SimpleMScanner\footnote{\textit{https://github.com/tens
 \begin{itemize}
 \setlength\itemsep{0.15em}
 \item In MATLAB, run \texttt{edit waveformTester.m} to bring up the code. 
-\item Ensure that the \texttt{DAQDevice} property is set to the ID of your DAQ card as shown in NI MAX. 
-\item Run \texttt{waveformTester;}, which will send a sinusoidal command signal to the scanner and create an object called \texttt{S} in the base workspace.
+\item Run \texttt{S=waveformTester;}, which will send a sinusoidal command signal to the scanner and create an object called \texttt{S} in the base workspace.
 \item At any time you can stop acquisition and disconnect from the DAQ by closing the figure window.
 \end{itemize}
 
@@ -257,7 +222,7 @@ This is done in the \texttt{connectToDAQandSetUpChannels} method of \texttt{wave
 \noindent
 Now try using fewer samples per cycle, which is the other way of increasing the mirror frequency. 
 Close the figure window, set \texttt{pixelsPerLine} from the default 256 to 128, and restart.
-At 128 \texttt{samplesPerLine} and $128~kS/s$ sample rate the scanner runs at $1~kHz$ and there will be a substantial lab between the actual position and the commanded position.
+At 128 \texttt{samplesPerLine} and $128~kS/s$ sample rate the scanner runs at $1~kHz$.
 
 \subsection{Different waveform types}
 Return the sample rate to 32E3 and the number of samples per line to 512. 
@@ -272,38 +237,22 @@ Think also how you might build the image on the PC and how well the mirrors foll
 \clearpage
 
 \section{Building scan waveforms}
-The sawtooth scan is not an unreasonable waveform to use for building a 1-D image. 
-Whilst more efficient scan patterns exist, we will aim to use a sawtooth for now.
 
-
-\subsection{Playing two analog waveforms simultaneously}
 So far you have moved only the $x$ mirror and considered 1-D images. 
 Obviously you need to move both mirrors at the same time to get a 2-D scan pattern and image full frames.
 Before proceeding, let's get both mirrors moving at the same time. 
 First of all, re-wire your setup so that the two analog outputs are copied to channels 1 and 2 of the oscilloscope.
-
-\noindent
 Now run the command \texttt{vidrio.AO.hardwareContinuousVoltageNoRegen\_2chans} to play out two sine waves.
-There will be a fast sine wave on \texttt{AO0} and a slow sine wave on \texttt{AO1}. 
 Satisfy yourself that your understand why the beam motion looks the way it does based upon the oscilloscope traces.
 
 
 \subsection{Acquiring a 2-D image}
-Since we will be making an image with the photodiode signal, connect the photodiode to \texttt{AI0} using a BNC cable.
+
 In this section you will modify \texttt{waveformTester.m} in order to turn it into a simple piece of scanning software.
-
-\begin{itemize}
-    \setlength\itemsep{0.15em}
-    \item Copy \texttt{waveformTester.m} to some other location in the MATLAB path (or to the Desktop and add that to the MATLAB path). 
-    \item Rename \texttt{waveformTester.m} to something reasonable like \texttt{scanTester.m}. Don't use spaces or other funny symbols in the file name.
-    \item Open \texttt{scanTester.m} in the MATLAB editor and change the \texttt{classdef} line (line 1) and the constructor name so that they match the new file name. 
-    \item Make sure your new class runs before continuing.
-\end{itemize}
-
-\noindent
-Your new \texttt{scanTester} class will need to be modified to produce suitable $x$ and $y$ waveforms and also to plot the photodiode signal as an image. 
+Since we will be making an image with the photodiode signal, connect the photodiode to \texttt{AI0} using a BNC cable.
+You will need to produce suitable $x$ and $y$ waveforms and also to plot the photodiode signal as an image. 
 Use \texttt{vidrio.AO.hardwareContinuousVoltageNoRegen\_2chans} to figure out how to add the second analog output channel.
-Try to produce square images at about 0.5 frames per second. 
+Aim for waveforms that will produce square images at about 0.5 frames per second. 
 Start off with a sample rate of 32E3 and change the frame rate by altering the image size.
 Hints:
 \begin{itemize}
@@ -311,7 +260,6 @@ Hints:
     \item The waveforms are stored in an N-by-2 array, where each row is a different time point. You only need to modify code in the \texttt{generateScanWaveform} method.
     \item Modify \texttt{obj.hAOTask.createAOVoltageChan} to use both channels 0 and 1.
     \item The \texttt{numReps} property can be used to set the number of scan lines per frame.
-    \item The \texttt{pixelsPerLine} property will do what it says. 
 \end{itemize}
 
 \noindent
@@ -362,7 +310,7 @@ What happens if you slide the photodiode up and down in the post holder?
 Now move the photodiode closer to the scanners and use a scan pattern that only just fills the photodiode active area. 
 Note how the image changes. 
 Stick a small paper square to a coverslip and place it over the photodiode active area and watch the image.
-
+You might get better results by focusing the beam onto the photodiode with an $f=60~mm$ lens. 
 
 \begin{figure}[h]
 \centering
