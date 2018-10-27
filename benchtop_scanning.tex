@@ -47,7 +47,7 @@ These scattered photons create blur and reduce contrast since they fail to satis
 Fluorescence-based scanning microscopy can greatly mitigate the problem of scattering. 
 A laser beam is scanned across the sample where it excites fluorophore molecules. 
 Emitted fluorescence is collected via the objective and detected at a photomultiplier tube (PMT). 
-No image is formed on the PMT (it's a `single pixel'), instead the image is constructed \textit{post-hoc} on a computer with the spatial origin of the emitted fluorescence determined by the position of the laser beam in time.
+No image is formed on the PMT (it's a `single pixel'), instead the image is constructed \textit{post-hoc} on a computer with the spatial origin of the emitted fluorescence determined by the position of the laser beam over time.
 In confocal microscopy, emitted fluorescence arising away from the focal point is rejected by a pinhole conjugate with the sample and near the PMT. 
 With 2-photon microscopy, the excitation spot is highly restricted so the origin of all collected photons is known (Fig.~\ref{1pvs2p}). 
 
@@ -67,7 +67,7 @@ The goals of today are:
 \begin{itemize}
 \setlength\itemsep{0.15em}
 \item Learn how to drive the scan mirrors using analog output waveforms from a data acquisition card. 
-\item Understand how an image is built on a computer screen from a photodiode signal. 
+\item Learn how to syncronise analog input and output and understand how an image is produced from a photodiode signal. 
 \item Become familiar with the basics of controlling National Instruments data acquisition hardware.
 \item Understand how a beam expander is used to conjugate scanning mirrors onto the objective back aperture to image microscopic samples.
 \end{itemize}
@@ -91,7 +91,6 @@ Set up the rail as shown in Fig.~\ref{scannersOnRail}.
 The scanners are bolted to the rail via the LCP11/M.
 The rail carriage with the iris should be able to freely slide up and down the length of the whole rail.
 The scanners need to be powered and receive a 0~V command signal. 
-A TA will show you how to do this. 
 
 \begin{figure}[h]
 \centering
@@ -104,7 +103,6 @@ The two mirrors will route the beam into the scanner box.}
 \noindent
 Direct the laser beam using two adjustable mirrors such that it hits the middle of the scan mirrors then comes out at 90 degrees with respect to the incoming beam (as shown in Fig.~\ref{scannersOnRail}). 
 Using the iris as a target, ensure the beam runs straight down the rail. 
-Move the scanners or even the rail if you need to.
 It's OK for our purposes if the alignment isn't \textit{perfect}: a couple of beam diameters is adequate. 
 Tips:
 \begin{itemize}
@@ -154,7 +152,7 @@ Before starting, make the following modifications to the DAQ breakout box.
 
 \begin{itemize}
     \setlength\itemsep{0.15em}
-    \item Copy \texttt{AO0} to \texttt{AI0} with a BNC cable. will allow us to acquire and monitor the $x$ galvo command signal.
+    \item Copy \texttt{AO0} to \texttt{AI0} with a BNC cable. This will allow us to acquire and monitor the $x$ galvo command signal.
     \item Connect \texttt{AI1} to the galvo position output lead. This will allow us to compare the actual mirror position with the command position.
 \end{itemize}
 
@@ -242,18 +240,27 @@ So far you have moved only the $x$ mirror and considered 1-D images.
 Obviously you need to move both mirrors at the same time to get a 2-D scan pattern and image full frames.
 Before proceeding, let's get both mirrors moving at the same time. 
 First of all, re-wire your setup so that the two analog outputs are copied to channels 1 and 2 of the oscilloscope.
-Now run the command \texttt{vidrio.AO.hardwareContinuousVoltageNoRegen\_2chans} to play out two sine waves.
+\texttt{AO0} should also go to the \textit{x} mirror analog input and \texttt{AO1} to the \textit{y} mirror analog input.
+Run \texttt{vidrio.AO.hardwareContinuousVoltageNoRegen\_2chans} to play out two sine waves.
 Satisfy yourself that your understand why the beam motion looks the way it does based upon the oscilloscope traces.
 
 
 \subsection{Acquiring a 2-D image}
 
-In this section you will modify \texttt{waveformTester.m} in order to turn it into a simple piece of scanning software.
+In this section you will modify \texttt{waveformTester.m} in order to turn it into a simple piece of scanning software. 
+The major changes will be:
+\begin{enumerate}
+    \setlength\itemsep{0.15em}
+    \item Instead of plotting the galvo feedback signal it will need to plot an image of the sample. 
+    \item It will need to drive both galvos instead of just one. 
+    \item The waveforms will need to be suitable for producing an image.
+\end{enumerate}
+
 Since we will be making an image with the photodiode signal, connect the photodiode to \texttt{AI0} using a BNC cable.
 You will need to produce suitable $x$ and $y$ waveforms and also to plot the photodiode signal as an image. 
 Use \texttt{vidrio.AO.hardwareContinuousVoltageNoRegen\_2chans} to figure out how to add the second analog output channel.
-Aim for waveforms that will produce square images at about 0.5 frames per second. 
-Start off with a sample rate of 32E3 and change the frame rate by altering the image size.
+Try to generate waveforms that will produce square images at about 0.5 frames per second. 
+Start off with a fixed sample rate of 32E3 and change the frame rate by altering the image size.
 Hints:
 \begin{itemize}
     \setlength\itemsep{0.15em}
@@ -305,12 +312,18 @@ Hints:
 Place the photodiode around 30~cm from the scanners and use and amplitude of 2 or 3~V.
 Fire up the code and try to get an image. 
 What do you see?
+Which axis in the image corresponds to the $x$ (fast) axis?
 Is it what you expect? Hint: think about how the image is being assembled and how well the scanner follows the command signal.
-What happens if you slide the photodiode up and down in the post holder?
-Now move the photodiode closer to the scanners and use a scan pattern that only just fills the photodiode active area. 
-Note how the image changes. 
-Stick a small paper square to a coverslip and place it over the photodiode active area and watch the image.
-You might get better results by focusing the beam onto the photodiode with an $f=60~mm$ lens. 
+What is odd features does the image have and how can you explain them?
+
+
+\section{Obtain an image of a microscopic sample}
+Place one of the small insect specimens (such as a flea) in front of the photodiode. 
+Do you get an image of the flea?
+Why does the image not look great?
+Try using the $f=60~mm$ lens as an objective to improve the image. 
+Why does the image now look better?
+If you like you can also screw the $f=25~mm$ lens in front of the photodiode to collect more light. 
 
 \begin{figure}[h]
 \centering
@@ -327,24 +340,24 @@ You might get better results by focusing the beam onto the photodiode with an $f
 \clearpage
 
 
-\section{Obtain an image of a microscopic sample}
-You will now use a microscope objective to scan the beam over a sample and obtain an image. 
-You already have the scanners on the end of an optical rail with the beam aligned to the rail. 
-With a help of a TA you will add a scan lens, tube lens, and 4x objective to form a simple scanning microscope. 
-the scan lens and tube lens serve two purposes:
+\section{Imaging with increased NA}
+In scanning microscopy we usually wish to fill the back aperture of the objective in order to use its full NA and get the smallest PSF. 
+We use microscopy objectives, as these are very well corrected and produce a good PSF over a fairly large range of scan angles. 
+How might you modify your microscope to image the sample with the 4x objective objective?
+You can not just replace the $f=60~mm$ lens with the objective, as the thin laser beam would just sweep across the back of it. 
+You will need to add optics between the scanners and objective in order to both expand the beam and cause it to pivot at the back aperture (Fig.~\ref{pivot}). 
+Hint: recall the concept of conjugate planes from the illumination practical.
 
-\begin{enumerate}
-\setlength\itemsep{0.1em}
-\item They placed the scanners in a conjugate plane to the back aperture of the objective. 
-\item They form a beam expander which allows the beam to fill the back aperture of the objective.
-\end{enumerate}
 
-\noindent
-Once everything is set up, play your scan pattern and use a card to observe the beam motion through the optical system. 
-What do you see at $1f$ from the scan lens?
-What do you see at the working distance of the objective?
-What do you see at the objective back aperture?
-Satisfy yourself that all those things make sense.
+\begin{figure}[h]
+\centering
+\includegraphics[width=2in]{ScanMirrorBeam.eps}
+\includegraphics[width=2in]{Objective_pivot.eps}
+\caption{Left: A scan mirror deflects a laser beam as it pivots about its axis.
+         Right: In order to scan a focused spot across a sample, the beam must pivot at the back aperture of the objective. }
+\label{pivot}
+\end{figure}
+
 
 \noindent
 Place a slide containing an EM grid at the working distance of the objective. 
@@ -354,25 +367,8 @@ Focus the beam onto the grid as best you can by eye.
 Now it's time to get an image!
 
 
-\section{Advanced Topics}
-If you have completed the above and still have time, you can explore any of the following topics which take your fancy.
-
-
-
-\subsection{Trying different waveforms in ScanImage}
-The sawtooth waveform is commonly called a `unidirectional scan waveform' because we acquire data in one direction only (the slow ramp). 
-It's easy to build an image from this waveform but a lot of time is wasted during the $x$ mirror flyback. 
-You could optimize this by using both the outward and return portions of the waveform to build an image. 
-Think how would you change your sawtooth waveform to allow for this `bidirectional' scanning? 
-
-ScanImage supports both unidirectional and bidirectional scanning. 
-Start it by typing `scanimage` into the command line and set it up with the help of a TA. 
-`Focus` starts scanning and `Configuration` window allows you to change scan settings. 
-Get an image of the photodiode and explore how this alters when you change the scan settings. 
-Try to get a nice image of the photodiode without artifacts using bidirectional scanning. 
-
-
-\subsection{Correcting image artifacts}
+\section{Optional question: correcting image artifacts}
+If you have completed the above and still have time, you can consider how to get rid of scanning artifacts. 
 We built images based on the command waveforms. 
 In other words, we assume the beam is located where we asked it to be and we placed the pixels at that location.
 Since the actual beam position does not follow the expected position, this produces artifacts. 

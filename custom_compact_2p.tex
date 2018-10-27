@@ -82,6 +82,7 @@ Be very cautious around the set up:
     \item Shutter the beam when not using it. 
     \item Take particular care where the beam is directed upwards, such as in the periscope. 
     \item The scanners can deflect the beam by $>20$ degrees depending on the command signal. Ensure the mirrors are static and zeroed before routing the beam into the scan head for the first time. 
+    \item Stand behind the scanners whilst the microscope is scanning.
     \item Use beam blocks where appropriate to keep the beam within your work area.
 \end{itemize}
 
@@ -108,10 +109,14 @@ Since this involves a large number of parts, you will build it in stages as a se
 \subsubsection{Beam Expander}
 First you will add the beam expander. 
 The completed beam expander is shown in Fig.~\ref{fig:beamExpander}. 
-Assemble the expander then insert it at a suitable location in the light path.
-Ensure the beam travels down the axis of the expander and is collimated as it exits. 
-You have a 0.050'' inch imperial hex driver for the 4-40 set screws found on the cage plates.
-You may need to use components not shown in Fig.~\ref{fig:layout} or Fig.~\ref{fig:beamExpander} to achieve the alignment.
+Assemble the expander and place to one side: before inserting it into the light path you will need to think carefully how it will be aligned with the beam. 
+The beam will need to travel down the axis of the expander and it will need to emerge collimated.
+Avoid touching the lens surfaces and don't force the components together. 
+
+You can check collimation by ensuring the beam doesn't diverge or converge at large distances from the expander. 
+You can check alignment by placing two irises on the beam path downstream of where the expander will go and ensuring that the beam is undeviated when the beam expander is put into place. 
+Hint: your job will be easier if the beam enters the expander parallel to the table. 
+
 Place a temporary beam block after the telescope for safety.
 What is the magnification of the expander and why might we want to expand the beam?
 
@@ -120,7 +125,7 @@ What is the magnification of the expander and why might we want to expand the be
 \includegraphics[width=3in]{expander_CAD_01.eps}
 \includegraphics[width=2.85in]{expander_CAD_02.eps}
 \includegraphics[width=5in]{beam_expander_box.eps}
-\caption{Beam expander shown assembled (top) and as components in box (bottom).}
+\caption{Beam expander shown assembled (top) and as components in box (bottom). Avoid touching the lens surfaces.}
 \label{fig:beamExpander}
 \end{figure}
 
@@ -148,10 +153,10 @@ Assemble the parts in the `\textbf{Periscope}' box such that they look as shown 
 Depending on how the light path is arranged you might wish to alter the orientation of the upper and lower mirrors. 
 There is an extra alignment iris in the periscope box, you can place this wherever you think is most helpful.
 You can now attach the periscope to the microscope and support it with the components shown in red. 
-You will find those in the box labeled `\textbf{2P Support Mechanics}`.
+You will find those in the box labeled `\textbf{2P Support Mechanics}'.
 Ensure the periscope is vertical and not tilted and that the scanner enclosure is square with respect to the cage system. 
 Once bolted to the table, the periscope will also stop the scanners from rotating in the SM2 cage plate to which they are screwed.
-\textbf{Do not tighten the scanner hard onto the cage plate they are connected to. Be gentle.}
+\textbf{Do not tighten the scanner hard onto the connected cage plate: it can jam. Be gentle.}
 
 
 \begin{figure}[h]
@@ -193,13 +198,15 @@ What is the total expansion of the beam?
 \clearpage
 
 \subsubsection{Completing the excitation path}
-If you had an SM2 cage plate supporting the frame, you will need to remove it to add the dichroic cube (Fig.~\ref{fig:dichroic_holder}).
+If you had an SM2 cage plate (the one highlighted in purple) supporting the frame, you will need to remove it to add the dichroic cube (Fig.~\ref{fig:dichroic_holder}).
 Think before you do this, however. 
 How far should the scanner relay optics be from the scanners and how far from the tube lens should the dichroic cube be mounted?
 The path of the beam through the cube is depicted in Fig.~\ref{fig:dichroic_holder} as a red line.
 To help you with this step, you can move the scanners over a small scan angle whilst looking at the the beam motion. 
 Use ScanImage for this, as it is has been configured to avoid large scan angles.
-\textbf{Be cautious. Perform this step with assistance}.
+\textbf{Be cautious: the beam might still spill out of the scan head. Stand behind the scanners and perform this step with assistance}.
+Finally, is the beam exiting the cube traveling directly downwards and so on-axis with the objective we will add?
+Use two rods and the spring-loaded SM1 target to check. 
 
 \begin{figure}[h]
 \center
@@ -209,14 +216,15 @@ Use ScanImage for this, as it is has been configured to avoid large scan angles.
 \label{fig:dichroic_holder}
 \end{figure}
 
-Once you are satisfied with the alignment, you can try scanning a fluorescent sample card and confirming by eye that you get fluorescence whilst the beam is moving over the sample:
+
+Once you are satisfied with the alignment, you can try scanning a fluorescent plastic sample card and confirming by eye that you get fluorescence whilst the beam is moving over the sample:
 \begin{itemize}
     \setlength\itemsep{0.15em}
      \item Insert the 40x objective.
      \item Add the 3-axis stage under the objective.
-     \item Place a fluorescent sample card on the stage and carefully bring it up to the objective. Working distance is 2 or 3 mm. 
+     \item Place a Chroma fluorescent sample card on the stage and carefully bring it up to the objective. Working distance is 2 or 3 mm. 
      \item Use water as the immersion medium.
-     \item Use a low laser power and a suitable wavelength (ask for assistance). 
+     \item Use a low laser power and a suitable wavelength. 
      \item Start scanning and focus until you see fluorescence.
  \end{itemize}
 
