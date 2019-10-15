@@ -56,41 +56,27 @@ pdfproducer = {dvips + ps2pdf}
 \setcounter{secnumdepth}{2}
 
 \begin{center}
-\textbf{\Large{Optics Bench Exercises: Illuminating the Sample}}
+\textbf{\Large{Optics Bench Exercises \\ \vspace{5mm} Building a brightfield microscope}}
 \end{center}
 
-\section{Introduction}
-One of the key challenges of microscopy is to adequately illuminate the sample. 
-By this we mean that the sample should be illuminated uniformly and from a suitably wide range of angles. 
-Different samples are best illuminated in different ways.
-In transmission microscopy, the sample is illuminated from the opposite side to which it is imaged. 
-In fluorescence microscopy, the sample is illuminated from the same side, with the objective also serving as the condenser. 
-It is not efficient to illuminate the sample directly (with no intervening lenses) because light is emitted in all directions from the source but only a narrow range of ray angles reach the specimen. 
-In the following exercises you will build two different illumination systems: critical and K\"{o}hler. 
+\vspace{10mm}
+
+The goal of this exercise is to build a brightfield microscope with K\"{o}hler illumination. We will do this in steps to understand the importance of illuminating the sample uniformly and from a wide range of angles. Important: think about WHY we make you place specific parts in a specific order.
 
 
-\subsection{Critical illumination of a sample}
-In critical illumination the light source is focused onto the specimen (Fig.~\ref{critIlum}).
+\section{Critical illumination of a sample}
+In critical illumination the light source is focused onto the specimen.
 This provides illumination from a range of angles but has a major drawback which will become apparent soon. 
-You will first you will set up critical illumination with one lens.
 
-\begin{figure}[h]
-\center
-\includegraphics[width=5in]{Critical_Illumination.eps}
-\caption{A simple critical illumination set up for visual microscopy.}
-\label{critIlum}
-\end{figure}
-
-
-Set the laser at one end of the rail and align the beam with the rail using a single iris:
+\subsection{Optical axis}
+We will first create an 'optical axis' using a laser pointer - this will help us align the optics. Set the laser at one end of the rail and align the beam with the rail (horizontal and centred) using a single iris:
 \begin{itemize}
     \setlength\itemsep{0.1em}
     \item Set the iris to a height suitable for adding 2'' optics. You can mount the iris to a $75~mm$ post and use a $50~mm$ post holder. 
     \item Clamp the laser pointer to one end of the rail.
-    \item With the iris next to the pointer, \textit{translate} the pointer until it goes through the iris. 
-    \item Slide the iris to the other end of the rail and \textit{rotate} the pointer until it goes through the iris. 
+    \item With the iris closest to the pointer, \textit{move/translate} the pointer until it goes through the iris. 
+    \item Slide the iris to the other end of the rail and \textit{tilt} the pointer until it goes through the iris. 
     \item Repeat until the beam is parallel with the rail. 
-    \item Do not translate the iris on its post to achieve beam alignemnt. 
 \end{itemize} 
 
 \begin{figure}[h]
@@ -102,14 +88,15 @@ Set the laser at one end of the rail and align the beam with the rail using a si
 
 \clearpage
 
-
-Once you're done, place a positioning collar around the iris post so you can retain its height even if you have to remove it from the post holder. 
-You will now align the tube lens and objective with the beam (Fig.~\ref{fig:beam_obj_tube}). 
+\subsection{Imaging optics}
+Once you're done, place a positioning collar around the iris post so you can retain its height even if you have to remove it from the post holder. We start at the end of the microscope, with the tube lens and objective (Fig.~\ref{fig:beam_obj_tube}). 
 
 \begin{itemize}
+\item Hint: In addition to the iris, use `back reflections' of the laser to align optics
 \item Slide the iris to the end of the rail. 
 \item Place the $f=300~mm$ lens $1f$ from the iris and adjust it until the beam goes through the iris. This is your `tube lens'.
-\item Place the objective upstream of the tube lens and align it such that the beam (now expanded) again goes through the iris. 
+\item Place the 4x objective before the tube lens and align it such that the beam (now expanded) again goes through the iris. What is the magnification of your imaging system?
+\item Why are we starting from the back of the microscope? Why the tube lens first?
 \end{itemize}
 
 \begin{figure}[h]
@@ -119,51 +106,32 @@ You will now align the tube lens and objective with the beam (Fig.~\ref{fig:beam
 \label{fig:beam_obj_tube}
 \end{figure}
 
-All that is left is to add a sample, collector lens and a light source. 
+\subsection{Basic illumination optics}
+Let's place a sample and illuminate it with an LED, completing our simple microscope.
 
 \begin{itemize}
-\item Hint: to avoid running out of $50~mm$ posts in the exercise that follows, use $30~mm$ or $40~mm$ posts for the 2'' lenses, sample holder, and card holder.
-\item Place the light source at one end of the rail and then put a 1''{\diameter} $f=25~mm$ or $f=35~mm$ lens at $2f$ from it.
-\item Place your sample at $2f$ on the other side, where the image of the LED emitter is formed.
-\item Move the slide back and forth along the rail until an image of the LED emitter appears on it.
-\item Place the 4x objective after the slide. This objective has a working distance of about $20~mm$.
-\item At the other end of the rail, place a viewing screen onto which you will form an image.
-\item Position an $f=200~mm$ lens $1f$ from the card. This is known as the tube lens and will image the sample onto the card
-\footnote{The $f=200~mm$ lens will yield 4x. You could use the $f=300~mm$ lens if you wish, to yield 6x.}.
-\item Move the objective back and forth a small distance to focus and obtain an image. 
+\item Hint: Use $30~mm$ or $40~mm$ posts for the 2'' lenses, sample holder, and card holder.
+\item Place your sample holder in front of the objective (about mid-rail)
+\item Place the LED and choose one of the 1''{\diameter} $f=25~mm$ or $f=35~mm$ lenses to direct light onto the sample. Can you see the image of the LED? Where does the image form?
+\item At the other end of the rail where the iris was, place a viewing screen onto which you will form an image - move the objective to focus.
 \end{itemize}
 
-The above arrangement is a simple microscope. 
-As you might expect, the image of the sample also contains an image of the light source. 
-This is obviously not ideal.
-Before we go on to address this problem, let's improve the illumination by capturing more of the light from the source. 
-The plan is as follows (don't build it yet):
-We will add an 2''{\diameter} $f=60~mm$ before the sample, forming an infinite conjugate system with the existing lens. 
-The lens nearer the source is known as the \textbf{collector lens} and will be at $1f$ from the source.
-The lens nearer the sample is known as the \textbf{condenser lens} and is at $1f$ from the sample. 
-This is still critical illumination, since the light source will be imaged onto the sample, but the collector lens will be closer to the source and so more light will be captured. We will align the lenses with the laser pointer:
+The above arrangement is a simple microscope. How can you modify the illumination to make it brighter? Discuss with a TA and Implement it.
+\\
+
+You now have an infinite conjugate illumination system, giving you control over the illumination NA by placing an iris in the infinite space. Draw the ray diagram to predict what effect this has on the image. Test it with a sample! (Fig.~\ref{fig:critical_iris}).
+\\
+
+\subsection{Upgrade to K\"{o}hler illumination}
+Discuss what is missing/wrong with your microscope. 
 
 \begin{itemize}
-\item Remove all the posts (not the rail carriages) from the rail.
-\item Add all 10 post and rail carriage assemblies to your rail. You will need 6 carriages between the objective and the light source.
-\item Replace the light source with the laser pointer on a $75~mm$ post. 
-\item Use an iris as before to align the beam. However, this time you will have to move it between post holders and maintain its height with a post collar since you won't be able to slide it along the rail.
-\item Replace the tube lens and position it at the same height as the beam. Use the iris to help you.
-\item Add objective upstream of the tube lens. Get the laser beam hitting the middle of the of front element. 
-\item Now place the iris in the specimen's post holder and locate the $f=60~mm$ condenser lens next to it, using the iris as a target. 
-\item Replace the iris with the sample
-\item Use the iris to place the $f=30~mm$ collection lens in front of the laser.
-\item Leave the iris where it is but open it. 
-\item \textbf{You should have two empty carriages between the iris and the condenser lens}
-\item Replace the laser pointer with your light source. 
-\item Move the lenses back and forth so as to obtain a focused image under critical illumination. 
+	\item Use your K\"{o}hler notes to reason through this and implement the necessary changes
+	\item Find ways to verify that your microscope is well aligned (optics placed in correct positions). Do you have independent control over illumination field and NA?
+	\item Add the camera, check out different samples
+	\item Impress a TA with your accomplishment
+	\item Switch to a 10x objective - what determines how well you can image the sample? What is better compared to the 4x?
 \end{itemize}
-
-
-With an infinite conjugate illumination system it becomes possible to regulate the NA of the illumination by varying the size of the iris in the infinite space. 
-Try it!
-By altering the NA of the illuminated light, the iris provides control over the resolution, contrast, and depth of field (Fig.~\ref{fig:critical_iris}).
-To see the effect: open the iris, defocus slightly by moving the objective, now close the iris. The image will go back into focus. 
 
 \begin{figure}[h]
 \center
@@ -175,11 +143,14 @@ Note how closing the iris restricts the range of angles reaching the sample.}
 \label{fig:critical_iris}
 \end{figure}
 
+\vspace{30mm}
+You have finished! Unfortunately, the princess is another castle. See you tomorrow.
 
 
 \clearpage
 
-\subsection{K\"{o}hler Illumination}
+
+\section{Reference: K\"{o}hler Illumination}
 K\"{o}hler illumination is an important and commonly used technique in light microscopy, as it provides even illumination of the sample whilst ensuring the light source (e.g. the bulb filament) is not visible. 
 This is achieved by adding a third lens, the field lens, before the condenser so that the image of the light source is out of focus at the sample. 
 Since the source is out of focus, the illumination is uniform. 
@@ -201,7 +172,7 @@ The yellow lines indicate the conjugate relationship between the light source pl
 \label{fig:koehler}
 \end{figure}
 
-At the the two conjugate planes in the illumination path are two irises (diaphragms). 
+At the two conjugate planes in the illumination path are two irises (diaphragms). 
 The \textbf{field diaphragm} is at $1f$ before the field lens, in the point conjugate with the sample. 
 The field lens and condenser lens form an infinite conjugate system that image the field diaphragm onto the sample. 
 The field diaphragm appears in focus at the sample and is used to regulate the area of illumination. 
@@ -216,7 +187,7 @@ Closing the aperture diaphragm reduces the NA of the illumination and increases 
 
 \clearpage
 
-You will now convert the critical illumination to K\"{o}hler illumination simply by adding the $f=60~mm$ field lens and an extra iris.
+The completed arrangement of the components is shown in Fig.~\ref{fig:koehler_completed}. 
 The components will be arranged in the following order and are all at $1f$ from each other (Fig.~\ref{fig:koehler}):
 \begin{enumerate}
 \setlength\itemsep{0.1em}
@@ -228,12 +199,8 @@ The components will be arranged in the following order and are all at $1f$ from 
 \item The objective and tube lenses as before.
 \end{enumerate}
 
-The completed arrangement of the components is shown in Fig.~\ref{fig:koehler_completed}. 
-Build the K\"{o}hler setup and observe that the image of the emitter is gone. 
-You will likely need to tweak the distances between the components to get the field diaphragm conjugate with the sample. 
-Once this is done, regulate the size of the field diaphragm and observe the effect. 
-Defocus slightly and close the aperture diaphragm. Observe the effect.
-You have finished! Unfortunately, the princess is another castle. See you tomorrow. 
+
+
 
 \begin{figure}[h]
 \center
